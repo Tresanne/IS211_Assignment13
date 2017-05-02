@@ -1,0 +1,48 @@
+<html>
+<head>
+<title> Login </title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+
+<body>
+{% if quiz_results|length %}
+<table>
+<tbody>
+<tr>
+<td>Quiz ID</td>
+<td>Score</td>
+</tr>
+{% for i in range(quiz_results|length) %}
+	<tr>
+	<td>{{quiz_results[i][1]}}</td>
+	<td>{{quiz_results[i][2]}}</td>
+	</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+No results
+{% endif %}
+<br><br>
+<center>
+<a href='/dashboard'>Dashboard</a>
+</center>
+</body>
+</html>
+</html>

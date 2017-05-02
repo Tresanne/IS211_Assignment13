@@ -1,0 +1,77 @@
+<html>
+<head>
+<title> Login </title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+
+<body>
+
+<center><h3> Students </h3></center>
+<table>
+<tbody>
+<tr>
+<td>Student ID</td>
+<td>First name</td>
+<td>Last name</td>
+</tr>
+{% for student in all_students %}
+
+<tr>
+<td><a href="/student/{{student[2]}}">{{student[2]}}</a></td>
+<td><a href="/student/{{student[2]}}">{{student[0]}}</a></td>
+<td><a href="/student/{{student[2]}}">{{student[1]}}</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<br>
+<br>
+
+
+<center><h3> Quizzes </h3></center>
+<table>
+<tbody>
+
+<tr>
+<td>Quiz ID</td>
+<td>Subject</td>
+<td>Number of questions</td>
+<td>Date</td>
+</tr>
+
+{% for quiz in all_quizzes %}
+<tr>
+	<td>{{quiz[0]}}</td>
+	<td>{{quiz[1]}}</td>
+	<td>{{quiz[2]}}</td>
+	<td>{{quiz[3]}}</td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
+<br><br>
+<center><a href="/student/add">Add Student</a></center>
+<center><a href="/quiz/add">Add Quiz</a></center>
+<center><a href="/result/add">Add Result</a></center>
+
+</body>
+</html>
+</html>

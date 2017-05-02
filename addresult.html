@@ -1,0 +1,29 @@
+<html>
+<head>
+<title> Add Result </title>
+</head>
+<body>
+
+{% if error_message %}
+{{error_message}}
+{% endif %}
+<form action = "" method = "post"  >
+    Student:  			
+	<select name="student">
+		{% for student in all_students %}
+		<option value="{{student[2]}}">{{student[0]}} {{student[1]}}</option>				
+		{% endfor %}
+	</select>	
+	quiz:
+	<select name="quiz">
+		{% for quiz in all_quizzes %}
+		<option value="{{quiz[0]}}">{{quiz[1]}}</option>				
+		{% endfor %}
+	</select>
+	<input type="numeric" name='score'>
+	<br>
+	<center><input type="submit" value="Add Result"></center>
+</form>   
+</body>
+</html>
+</html>
